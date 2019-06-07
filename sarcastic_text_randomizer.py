@@ -11,12 +11,10 @@ Options:
 
 """
 
+import pyperclip
+
 from docopt import docopt
 from random import random
-
-# Feature(s) to add.
-# TODO:
-# ! 1) Automatically add the result to the clipboard.
 
 
 def string_randomize(string: str) -> str:
@@ -38,10 +36,14 @@ if __name__ == "__main__":
     arguments = docopt(__doc__, version='Sarcastic Text Randomizer 1.0')
     string = arguments["<string>"]
     if string:
-        print(string_randomize(string))
+        sarcastic_text = string_randomize(string)
+        pyperclip.copy(sarcastic_text)
+        print(sarcastic_text)
     else:
         string = input('String to randomize: \n')
-        print(string_randomize(string))
+        sarcastic_text = string_randomize(string)
+        pyperclip.copy(sarcastic_text)
+        print(sarcastic_text)
 
     # Hangs the subprocess to avoid closing immediately.
     input()
