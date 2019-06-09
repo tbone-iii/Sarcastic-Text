@@ -9,6 +9,10 @@ Options:
   -h --help     Show this screen.
   --version     Show version.
 
+Description:
+    Receives a string input and randomizes the capitalization of the letters
+    in that string. Automatically copies the string into the clipboard.
+
 """
 
 import pyperclip
